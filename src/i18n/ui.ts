@@ -19,6 +19,8 @@ import aiAgentsTranslations from './pages/services/ai-agents.json';
 import devopsTranslations from './pages/services/devops.json';
 import processAutomationTranslations from './pages/services/process-automation.json';
 import customDevelopmentTranslations from './pages/services/custom-development.json';
+import legalTranslations from './pages/legal.json';
+import solutionsTranslations from './pages/solutions.json';
 import astroConfig from '../../astro.config.mjs';
 
 export const languages = {
@@ -54,6 +56,8 @@ export const ui = {
     ...processAutomationTranslations.es,
     ...customDevelopmentTranslations.es,
     ...faqTranslations.es,
+    ...legalTranslations.es,
+    ...solutionsTranslations.es,
     'site.title': 'XSoftHub - Desarrollo de Software',
     'site.description': 'Empresa líder en desarrollo de software, aplicaciones web y móviles. Transformamos ideas en soluciones digitales innovadoras.',
     'nav.home': 'Inicio',
@@ -62,6 +66,7 @@ export const ui = {
     'nav.portfolio': 'Portafolio',
     'nav.team': 'Equipo',
     'nav.contact': 'Contacto',
+    'nav.solutions': 'Soluciones',
     '404.title': 'Página no encontrada',
     '404.subtitle': 'Error 404',
     '404.description': 'Lo sentimos, la página que estás buscando no existe o ha sido movida.',
@@ -90,6 +95,8 @@ export const ui = {
     ...processAutomationTranslations.en,
     ...customDevelopmentTranslations.en,
     ...faqTranslations.en,
+    ...legalTranslations.en,
+    ...solutionsTranslations.en,
     'site.title': 'XSoftHub - Software Development',
     'site.description': 'Leading software development company, web and mobile applications. We transform ideas into innovative digital solutions.',
     'nav.home': 'Home',
@@ -98,6 +105,7 @@ export const ui = {
     'nav.portfolio': 'Portfolio',
     'nav.team': 'Team',
     'nav.contact': 'Contact',
+    'nav.solutions': 'Solutions',
     '404.title': 'Page not found',
     '404.subtitle': 'Error 404',
     '404.description': 'Sorry, the page you are looking for doesn\'t exist or has been moved.',

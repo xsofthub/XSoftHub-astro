@@ -4,14 +4,13 @@ import LanguageSwitcher from "./LanguageSwitcher.astro";
 import { Arrow } from "../components/icons/ui";
 import { Phone, Email, Location } from "../components/icons/contact";
 import type { OptionalLanguageProps } from "../types";
-import { getServices, getSaasServices } from "../utils/data-store";
+import { getServices } from "../utils/data-store";
 
 interface Props extends OptionalLanguageProps {}
 
 const { lang = "es" } = Astro.props;
 const t = useTranslations(lang);
 const services = getServices(lang);
-const saasServices = getSaasServices(lang);
 ---
 
 <!-- Start Header Section -->
@@ -121,17 +120,8 @@ const saasServices = getSaasServices(lang);
                   }
                 </ul>
               </li>
-              <li class="menu-item-has-children">
-                <a>{t("saas_services.section.title")}</a>
-                <ul>
-                  {
-                    saasServices.map((service) => (
-                      <li>
-                        <a href={service.link}>{service.title}</a>
-                      </li>
-                    ))
-                  }
-                </ul>
+              <li>
+                <a href={`/${lang}/solutions`}>{t("nav.solutions" as any)}</a>
               </li>
               <li class="menu-item-has-children">
                 <a>Pages</a>

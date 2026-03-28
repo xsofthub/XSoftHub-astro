@@ -1,0 +1,272 @@
+{
+  "es": {
+    "solutions.title": "Soluciones de Negocio, Planes y Paquetes de Servicios",
+    "solutions.subtitle": "Soluciones flexibles de negocio diseñadas para apoyar el desarrollo, ejecución y crecimiento operativo de su organización.",
+    "solutions.choose_plan": "Elegir Plan",
+    "solutions.contact_sales": "Contactar Ventas",
+    "solutions.tab_onetime": "Por Proyecto",
+    "solutions.tab_monthly": "Mensual",
+    "solutions.pricing_subtitle": "Planes y Precios",
+    "solutions.pricing_title": "Elige el plan perfecto para tu negocio",
+
+    "solutions.onetime": [
+      {
+        "id": "review",
+        "title": "Quick Review",
+        "prices": { "amount": "75", "description": "Revisión y auditoría de código" },
+        "features": [
+          "Revisión de código existente",
+          "Reporte de mejoras y vulnerabilidades",
+          "Recomendaciones de arquitectura",
+          "Entrega en 48 horas",
+          "Follow-up por email"
+        ],
+        "button": "Elegir Plan"
+      },
+      {
+        "id": "consulting",
+        "title": "Tech Consulting",
+        "prices": { "amount": "150", "description": "Consultoría técnica especializada" },
+        "features": [
+          "Sesión de consultoría de 2 horas",
+          "Análisis de requisitos",
+          "Roadmap técnico inicial",
+          "Recomendación de stack tecnológico",
+          "Documento de requisitos formal",
+          "Soporte por email 7 días"
+        ],
+        "button": "Elegir Plan"
+      },
+      {
+        "id": "landing",
+        "title": "Landing Page",
+        "prices": { "amount": "300 – 500", "description": "Diseño y desarrollo web" },
+        "features": [
+          "Landing page responsive",
+          "Diseño UI/UX personalizado",
+          "SEO básico y meta tags",
+          "Formulario de contacto integrado",
+          "Animaciones y micro-interacciones",
+          "2 rondas de revisión incluidas"
+        ],
+        "button": "Elegir Plan"
+      }
+    ],
+
+    "solutions.monthly": [
+      {
+        "id": "core",
+        "title": "Development Core",
+        "prices": { "amount": "500", "description": "Desarrollo básico mensual" },
+        "features": [
+          "Hasta 20 horas de desarrollo",
+          "Flujo de desarrollo básico",
+          "Revisión de código y QA",
+          "Seguimiento de progreso",
+          "Soporte técnico por email"
+        ],
+        "button": "Elegir Plan"
+      },
+      {
+        "id": "growth",
+        "title": "Development Growth",
+        "prices": { "amount": "1,000 – 2,000", "description": "Desarrollo estructurado" },
+        "features": [
+          "Hasta 50 horas de desarrollo",
+          "Arquitectura y planificación",
+          "Framework de seguimiento",
+          "Checkpoints de proyecto",
+          "Soporte prioritario"
+        ],
+        "button": "Elegir Plan"
+      },
+      {
+        "id": "operations",
+        "title": "Operations Control",
+        "prices": { "amount": "2,000 – 3,500", "description": "DevOps y automatización" },
+        "features": [
+          "Hasta 80 horas de desarrollo",
+          "Pipeline CI/CD completo",
+          "Alineación de infraestructura",
+          "Guardrails de automatización",
+          "Soporte con respuesta rápida"
+        ],
+        "button": "Elegir Plan"
+      },
+      {
+        "id": "ai",
+        "title": "AI & Innovation",
+        "prices": { "amount": "3,500 – 6,000", "description": "IA, agentes y automatización" },
+        "features": [
+          "Consultoría de crecimiento con IA",
+          "Framework de agentes inteligentes",
+          "Estructura de gobernanza",
+          "Ajuste de flujos personalizados",
+          "Nivel de entrega prioritaria"
+        ],
+        "button": "Elegir Plan"
+      },
+      {
+        "id": "agency",
+        "title": "Agency Operations",
+        "prices": { "amount": "6,000 – 10,000", "description": "Operaciones multi-cliente" },
+        "features": [
+          "Habilitación multi-cliente",
+          "Estándares de ejecución cross-client",
+          "Gobernanza de capacidad",
+          "Control avanzado de sistemas",
+          "Ventana de soporte extendida"
+        ],
+        "button": "Elegir Plan"
+      },
+      {
+        "id": "enterprise",
+        "title": "Enterprise",
+        "prices": { "amount": "Personalizado", "description": "Contacta para más detalles" },
+        "features": [
+          "Cobertura completa del sistema",
+          "Supervisión estratégica",
+          "Gobernanza avanzada",
+          "Optimización de sistemas personalizada",
+          "Soporte de máxima prioridad"
+        ],
+        "button": "Contactar"
+      }
+    ]
+  },
+  "en": {
+    "solutions.title": "Business Solutions, Plans & Service Packages",
+    "solutions.subtitle": "Flexible business solutions designed to support development, execution, and operational growth as your organization scales.",
+    "solutions.choose_plan": "Choose Plan",
+    "solutions.contact_sales": "Contact Sales",
+    "solutions.tab_onetime": "Per Project",
+    "solutions.tab_monthly": "Monthly",
+    "solutions.pricing_subtitle": "Plans & Pricing",
+    "solutions.pricing_title": "Choose the perfect plan for your business",
+
+    "solutions.onetime": [
+      {
+        "id": "review",
+        "title": "Quick Review",
+        "prices": { "amount": "75", "description": "Code review & audit" },
+        "features": [
+          "Existing code review",
+          "Improvements & vulnerability report",
+          "Architecture recommendations",
+          "Delivered within 48 hours",
+          "Email follow-up"
+        ],
+        "button": "Choose Plan"
+      },
+      {
+        "id": "consulting",
+        "title": "Tech Consulting",
+        "prices": { "amount": "150", "description": "Specialized technical consulting" },
+        "features": [
+          "2-hour consulting session",
+          "Requirements analysis",
+          "Initial technical roadmap",
+          "Technology stack recommendation",
+          "Formal requirements document",
+          "7-day email support"
+        ],
+        "button": "Choose Plan"
+      },
+      {
+        "id": "landing",
+        "title": "Landing Page",
+        "prices": { "amount": "300 – 500", "description": "Web design & development" },
+        "features": [
+          "Responsive landing page",
+          "Custom UI/UX design",
+          "Basic SEO & meta tags",
+          "Integrated contact form",
+          "Animations & micro-interactions",
+          "2 revision rounds included"
+        ],
+        "button": "Choose Plan"
+      }
+    ],
+
+    "solutions.monthly": [
+      {
+        "id": "core",
+        "title": "Development Core",
+        "prices": { "amount": "500", "description": "Basic monthly development" },
+        "features": [
+          "Up to 20 development hours",
+          "Core development workflow",
+          "Code review & QA",
+          "Progress tracking",
+          "Email technical support"
+        ],
+        "button": "Choose Plan"
+      },
+      {
+        "id": "growth",
+        "title": "Development Growth",
+        "prices": { "amount": "1,000 – 2,000", "description": "Structured development" },
+        "features": [
+          "Up to 50 development hours",
+          "Architecture & planning",
+          "Execution tracking framework",
+          "Project checkpoints",
+          "Priority support"
+        ],
+        "button": "Choose Plan"
+      },
+      {
+        "id": "operations",
+        "title": "Operations Control",
+        "prices": { "amount": "2,000 – 3,500", "description": "DevOps & automation" },
+        "features": [
+          "Up to 80 development hours",
+          "Full CI/CD pipeline",
+          "Infrastructure alignment",
+          "Automation guardrails",
+          "Faster response support"
+        ],
+        "button": "Choose Plan"
+      },
+      {
+        "id": "ai",
+        "title": "AI & Innovation",
+        "prices": { "amount": "3,500 – 6,000", "description": "AI agents & automation" },
+        "features": [
+          "AI growth consulting",
+          "Intelligent agents framework",
+          "Governance structure",
+          "Custom workflow tuning",
+          "Priority delivery tier"
+        ],
+        "button": "Choose Plan"
+      },
+      {
+        "id": "agency",
+        "title": "Agency Operations",
+        "prices": { "amount": "6,000 – 10,000", "description": "Multi-client operations" },
+        "features": [
+          "Multi-client enablement",
+          "Cross-client execution standards",
+          "Capacity governance",
+          "Advanced system control",
+          "Extended support window"
+        ],
+        "button": "Choose Plan"
+      },
+      {
+        "id": "enterprise",
+        "title": "Enterprise",
+        "prices": { "amount": "Custom", "description": "Contact for details" },
+        "features": [
+          "Full system coverage",
+          "Strategic execution oversight",
+          "Advanced governance",
+          "Customized system optimization",
+          "Highest priority support"
+        ],
+        "button": "Contact Us"
+      }
+    ]
+  }
+}

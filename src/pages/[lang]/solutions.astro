@@ -1,0 +1,237 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Arrow, Feature } from "../../components/icons/ui";
+import { getStaticPaths, useTranslations } from "../../i18n/utils";
+import type { SupportedLanguage } from "../../types";
+
+export { getStaticPaths };
+
+const { lang } = Astro.params;
+const currentLang = lang as SupportedLanguage;
+const t = useTranslations(currentLang);
+const backgroundImage = "/assets/img/hero_bg.jpeg";
+
+const onetimePlans = t("solutions.onetime" as any) as any[];
+const monthlyPlans = t("solutions.monthly" as any) as any[];
+---
+
+<Layout title={`${t('nav.solutions' as any)} - XSoftHub`} lang={currentLang}>
+  <!-- Hero -->
+  <section class="cs-page_head cs-bg" style={`background-image: url('${backgroundImage}');`}>
+    <div class="container">
+      <div class="cs-page_head_in">
+        <h1 class="cs-page_title">{t('solutions.title' as any)}</h1>
+        <p class="cs-page_subtitle">{t('solutions.subtitle' as any)}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section>
+    <div class="container">
+      <div class="cs-tabs cs-style1">
+        <div class="cs-tabs_heading">
+          <div class="cs-section_heading cs-style1">
+            <h3 class="cs-section_subtitle">{t('solutions.pricing_subtitle' as any)}</h3>
+            <h2 class="cs-section_title">{t('solutions.pricing_title' as any)}</h2>
+          </div>
+          <ul class="cs-tab_links cs-style1 cs-mp0 cs-primary_font">
+            <li class="active"><a href="#tab_onetime">{t('solutions.tab_onetime' as any)}</a></li>
+            <li><a href="#tab_monthly">{t('solutions.tab_monthly' as any)}</a></li>
+          </ul>
+        </div>
+
+        <div class="cs-height_85 cs-height_lg_40"></div>
+
+        <div class="cs-tab_body">
+          <!-- One-time plans -->
+          <div class="cs-tab active" id="tab_onetime">
+            <div class="row">
+              {onetimePlans.map((plan: any) => (
+                <div class="col-lg-4">
+                  <div class="cs-pricing_table cs-style1">
+                    <h2 class="cs-pricing_title">{plan.title}</h2>
+                    <div class="cs-pricing_info">
+                      <div class="cs-price">
+                        <div class="cs-price_wrap">
+                          <h3 class="cs-white_color">${plan.prices.amount}/</h3>
+                          <span class="cs-accent_color">{t('solutions.tab_onetime' as any)}</span>
+                        </div>
+                      </div>
+                      <div class="cs-price_text">{plan.prices.description}</div>
+                    </div>
+                    <ul class="cs-pricing_feature cs-mp0">
+                      {plan.features.map((feature: string) => (
+                        <li>
+                          <span class="cs-feature_icon cs-accent_color"><Feature /></span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div class="cs-pricing_btn_wrap">
+                      <a href={`/${currentLang}/contact`} class="cs-text_btn">
+                        <span>{plan.button}</span>
+                        <Arrow />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="cs-height_25 cs-height_lg_25"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Monthly plans -->
+          <div class="cs-tab" id="tab_monthly">
+            <div class="row">
+              {monthlyPlans.map((plan: any) => (
+                <div class="col-lg-4">
+                  <div class="cs-pricing_table cs-style1">
+                    <h2 class="cs-pricing_title">{plan.title}</h2>
+                    <div class="cs-pricing_info">
+                      <div class="cs-price">
+                        {plan.id === 'enterprise' ? (
+                          <div class="cs-price_text">{plan.prices.amount}</div>
+                        ) : (
+                          <div class="cs-price_wrap">
+                            <h3 class="cs-white_color">${plan.prices.amount}/</h3>
+                            <span class="cs-accent_color">{t('solutions.tab_monthly' as any)}</span>
+                          </div>
+                        )}
+                      </div>
+                      <div class="cs-price_text">{plan.prices.description}</div>
+                    </div>
+                    <ul class="cs-pricing_feature cs-mp0">
+                      {plan.features.map((feature: string) => (
+                        <li>
+                          <span class="cs-feature_icon cs-accent_color"><Feature /></span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div class="cs-pricing_btn_wrap">
+                      <a href={`/${currentLang}/contact`} class="cs-text_btn">
+                        <span>{plan.button}</span>
+                        <Arrow />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="cs-height_25 cs-height_lg_25"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-height_100 cs-height_lg_70"></div>
+</Layout>
+
+<style>
+  .cs-page_head {
+    padding: 60px 0 40px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+  }
+  .cs-page_head::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .cs-page_head_in {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+  }
+  .cs-page_title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  .cs-page_subtitle {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .cs-tab {
+    display: none;
+  }
+  .cs-tab.active {
+    display: block;
+  }
+  .cs-tab_links.cs-style1 {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .cs-tab_links.cs-style1 li a {
+    padding: 8px 25px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  .cs-pricing_table {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .cs-pricing_table:hover {
+    transform: translateY(-10px);
+  }
+  .cs-price_wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+  }
+  .cs-price_wrap h3 {
+    margin: 0;
+    font-size: 38px;
+  }
+  .cs-price_wrap span {
+    font-size: 18px;
+  }
+  .cs-pricing_feature {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding: 20px 0;
+  }
+  .cs-pricing_feature li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    line-height: 1.3;
+  }
+  .cs-feature_icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+  @media screen and (min-width: 992px) {
+    .cs-tab .row {
+      display: flex;
+      align-items: stretch;
+    }
+    .cs-tab .col-lg-4 {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 768px) {
+    .cs-page_title { font-size: 28px; }
+    .cs-page_subtitle { font-size: 14px; }
+    .cs-page_head { padding: 80px 0 60px; }
+  }
+</style>

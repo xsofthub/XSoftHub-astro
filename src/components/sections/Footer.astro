@@ -1,7 +1,7 @@
 ---
 // Footer component
 import { useTranslations } from "../../i18n/utils";
-import { getServices, getSaasServices } from "../../utils/data-store";
+import { getServices } from "../../utils/data-store";
 import type { ComponentProps } from "../../types";
 
 interface Props extends ComponentProps {}
@@ -10,7 +10,6 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 const currentYear = new Date().getFullYear();
 const services = getServices(lang);
-const saasServices = getSaasServices(lang);
 ---
 
 <!-- Start Footer -->
@@ -47,14 +46,10 @@ const saasServices = getSaasServices(lang);
                 <div class="col-lg-3 col-sm-6">
                     <div class="cs-footer_item">
                         <h2 class="cs-widget_title">
-                            {t("contact.footer.saas.title")}
+                            {t("nav.solutions" as any)}
                         </h2>
                         <ul class="cs-menu_widget cs-mp0">
-                            {saasServices.map((service) => (
-                                <li>
-                                    <a href={service.link}>{service.title}</a>
-                                </li>
-                            ))}
+                            <li><a href={`/${lang}/solutions`}>{t("nav.solutions" as any)}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,6 +60,10 @@ const saasServices = getSaasServices(lang);
                         </h2>
                         <ul class="cs-menu_widget cs-mp0">
                             <li>info@xsofthub.com</li>
+                            <li><a href={`/${lang}/terms`}>{t("legal.nav.terms" as any)}</a></li>
+                            <li><a href={`/${lang}/privacy`}>{t("legal.nav.privacy" as any)}</a></li>
+                            <li><a href={`/${lang}/kyc-aml`}>{t("legal.nav.kyc" as any)}</a></li>
+                            <li><a href={`/${lang}/refund`}>{t("legal.nav.refund" as any)}</a></li>
                         </ul>
                     </div>
                 </div>

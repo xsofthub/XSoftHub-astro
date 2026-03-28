@@ -1,0 +1,83 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getStaticPaths, useTranslations } from "../../i18n/utils";
+import type { SupportedLanguage } from "../../types";
+
+export { getStaticPaths };
+
+const { lang } = Astro.params;
+const currentLang = lang as SupportedLanguage;
+const t = useTranslations(currentLang);
+const backgroundImage = "/assets/img/hero_bg.jpeg";
+
+const sections = [1, 2, 3, 4, 5, 6, 7, 8];
+const legalPages = [
+  { key: 'terms', href: `/${currentLang}/terms` },
+  { key: 'privacy', href: `/${currentLang}/privacy` },
+  { key: 'kyc', href: `/${currentLang}/kyc-aml` },
+  { key: 'refund', href: `/${currentLang}/refund` },
+];
+---
+
+<Layout title={`${t('refund.title' as any)} - XSoftHub`} lang={currentLang}>
+  <section class="cs-page_head cs-bg" style={`background-image: url('${backgroundImage}');`}>
+    <div class="container">
+      <div class="cs-page_head_in">
+        <h1 class="cs-page_title">{t('refund.title' as any)}</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-legal_section">
+    <div class="container">
+      <div class="cs-legal_content">
+        <!-- Legal nav -->
+        <div class="cs-legal_nav">
+          {legalPages.map((page) => (
+            <a href={page.href} class:list={['cs-legal_nav_item', page.key === 'refund' && 'active']}>
+              {t(`legal.nav.${page.key}` as any)}
+            </a>
+          ))}
+        </div>
+
+        <p class="cs-legal_updated">{t('legal.updated' as any)}</p>
+
+        <div class="cs-legal_body">
+          {sections.map((n) => (
+            <div class="cs-legal_block">
+              <h2>{t(`refund.s${n}.title` as any)}</h2>
+              <p>{t(`refund.s${n}.content` as any)}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .cs-legal_section { padding: 60px 0 80px; }
+  .cs-legal_content { max-width: 800px; margin: 0 auto; }
+  .cs-legal_nav { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
+  .cs-legal_nav_item {
+    padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500;
+    background: rgba(255,255,255,0.05); color: #999; border: 1px solid rgba(255,255,255,0.1);
+    text-decoration: none; transition: all 0.3s;
+  }
+  .cs-legal_nav_item:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+  .cs-legal_nav_item.active { background: #3b82f6; color: #fff; border-color: #3b82f6; }
+  .cs-legal_updated { font-size: 14px; color: #666; margin-bottom: 20px; }
+  .cs-legal_body { }
+  .cs-legal_block { margin-bottom: 30px; }
+  .cs-legal_block h2 { font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 10px; }
+  .cs-legal_block p { font-size: 14px; line-height: 1.8; color: #999; }
+  .cs-page_head { padding: 60px 0 40px; position: relative; background-size: cover; background-position: center; }
+  .cs-page_head::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); }
+  .cs-page_head_in { position: relative; z-index: 2; text-align: center; color: white; }
+  .cs-page_title { font-size: 36px; font-weight: 700; margin-bottom: 20px; }
+  @media (max-width: 768px) {
+    .cs-page_head { padding: 80px 0 60px; }
+    .cs-page_title { font-size: 28px; }
+    .cs-legal_nav_item { font-size: 12px; padding: 5px 12px; }
+  }
+</style>
